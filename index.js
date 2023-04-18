@@ -5,7 +5,6 @@ const bcrypt = require('bcryptjs');                              // Encrypt the 
 const jwt = require('jsonwebtoken');                             // Generate the token for the browser
 const fetchuser = require('./middleware/fetchuser')
 const app = express();                                           // Import express methods
-const port = 4000;                                               // Secure the port no. for backend
 var cors = require('cors')
 
 
@@ -197,7 +196,4 @@ app.get('/fetchallnotes', fetchuser, async (req, res) => {
   res.json(notes)
 })
 
-// Print the current active port on console
-app.listen(port, () => {
-  console.log(`Note-Taker listening on port ${port}`)
-})
+app.listen(process.env.PORT || 3000)
