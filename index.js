@@ -57,9 +57,8 @@ const Notes = mongoose.model('Notes', {
 })
 
 // Route 1 : Create an endpoint at ip:4000/ for checking connection to backend
-app.get('/', (req, res) => {
+app.all('/', (req, res) => {
   res.send('api working')
-
 })
 
 // Route 2 : Create an endpoint at ip:4000/auth for regestring the user in data base & sending token
